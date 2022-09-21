@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #ee9ca7, #ffdde1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 5rem);
+    grid-template-rows: minmax(8rem, auto) repeat(5, 5rem);
+    padding: 20px;
+    background-color: crimson;
+    box-shadow: 0 3px 10px #777;
+    border-radius: 10px;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgb(64, 64, 64);
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 0.75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.previous-operand {
+    font-size: 1.5rem;
+}
+
+.current-operand {
+    font-size: 2.5rem;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+@media (max-width: 500px) {
+    .calculator-grid {
+        grid-template-columns: repeat(4, 3.5rem);
+        grid-template-rows: minmax(7rem, auto) repeat(5, 3rem);
+        padding: 10px;
+    }
+
+    .previous-operand {
+        font-size: 1rem;
+    }
+
+    .current-operand {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
